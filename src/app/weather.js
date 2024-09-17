@@ -13,11 +13,18 @@ export const fetchWeatherData = async () => {
         mode: "cors",
       }
     );
+
+    if (!response.ok) {
+      throw new Error(`"${location}" was not found`);
+    }
+
     const data = parseWeatherData(await response.json());
 
     return data;
   } catch (err) {
     alert("Something went wrong while fetching the data. Error: " + err);
+
+    return null;
   }
 };
 
