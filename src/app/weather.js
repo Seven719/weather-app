@@ -3,16 +3,30 @@ const WEB_LINK =
   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline";
 
 let location = "London";
+let unitGroup = "metric";
 
-export const getWeather = async () => {
+export const fetchWeatherData = async () => {
   try {
-    const response = await fetch(`${WEB_LINK}/${location}?key=${API_KEY}`, {
-      mode: "cors",
-    });
-    const data = await response.json();
+    const response = await fetch(
+      `${WEB_LINK}/${location}?unitGroup=${unitGroup}&key=${API_KEY}`,
+      {
+        mode: "cors",
+      }
+    );
+    const data = parseWeatherData(await response.json());
 
     return data;
   } catch (err) {
     alert("Something went wrong while fetching the data. Error: " + err);
   }
+};
+
+const parseWeatherData = (data) => {
+  const {
+    resolvedAddress: address,
+    currentConditions: { temp, feelslike, humidity, windspeed },
+    description,
+  } = data;
+
+  return { address, temp, feelslike, humidity, windspeed, description };
 };
