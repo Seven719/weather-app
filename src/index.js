@@ -2,9 +2,15 @@ import { fetchWeatherData } from "./app/weather";
 
 const searchInput = document.getElementById("search-input");
 const weatherForm = document.getElementById("weather-form");
+const weatherImage = document.getElementById("weather-image");
 
-weatherForm.addEventListener("submit", (e) => {
+const imagesPath =
+  "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/2nd%20Set%20-%20Color";
+
+weatherForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  console.log(fetchWeatherData(searchInput.value, "metric"));
+  let data = await fetchWeatherData(searchInput.value, "metric");
+
+  weatherImage.src = `${imagesPath}/${data.icon}.svg`;
 });

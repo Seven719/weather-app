@@ -28,9 +28,9 @@ export const fetchWeatherData = async (location, unitGroup) => {
 const parseWeatherData = (data) => {
   const {
     resolvedAddress: address,
-    currentConditions: { temp, feelslike, humidity, windspeed },
+    currentConditions: { temp, feelslike, humidity, windspeed, icon },
     description,
   } = data;
 
-  return { address, temp, feelslike, humidity, windspeed, description };
+  return { address, temp, feelslike, humidity, windspeed, description, icon };
 };
