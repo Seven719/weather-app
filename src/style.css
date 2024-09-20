@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2e00b1;
+}
+
+.container {
+  background-color: #403e43;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 10%;
+}
+
+.container > * {
+  margin: 10px 0;
+}
+
+#weather-image {
+  height: 15%;
+}
