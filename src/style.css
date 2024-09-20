@@ -56,3 +56,7 @@ body {
 #city {
   font-size: 1.3rem;
 }
+
+img[src="#"] {
+  display: none;
+}
