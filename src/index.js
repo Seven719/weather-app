@@ -18,8 +18,8 @@ weatherForm.addEventListener("submit", async (e) => {
   let data = await fetchWeatherData(searchInput.value, "metric");
 
   weatherImage.src = `${imagesPath}/${data.icon}.svg`;
-  temp.textContent = data.temp;
-  feelsLike.textContent = data.feelslike;
-  humidity.textContent = data.humidity;
-  windspeed.textContent = data.windspeed;
+  temp.textContent = `${data.temp}°C`;
+  feelsLike.textContent = `Feels Like: ${data.feelslike}°C`;
+  humidity.textContent = `Humidity: ${data.humidity}%`;
+  windspeed.textContent = `Windspeed: ${data.windspeed}km/h`;
 });
