@@ -18,6 +18,7 @@ body {
   color: white;
   padding: 20px;
   border-radius: 5%;
+  font-size: 1.3rem;
 }
 
 .container > * {
@@ -25,7 +26,7 @@ body {
 }
 
 #weather-image {
-  height: 15vh;
+  height: 16vh;
   margin-bottom: 0px;
 }
 
@@ -37,6 +38,7 @@ body {
   border: 0;
   padding: 10px;
   border-radius: 7px;
+  font-size: 0.9rem;
 }
 
 #search-button:hover {
@@ -45,4 +47,8 @@ body {
 
 #search-button:active {
   background: #74727a;
+}
+
+#temp {
+  font-size: 1.8rem;
 }
