@@ -16,6 +16,10 @@ const imagesPath =
 const displayWeather = async () => {
   let data = await fetchWeatherData(searchInput.value, "metric");
 
+  if (!data) {
+    return;
+  }
+
   let address = data.address.split(", ");
   if (address.length >= 3) {
     city.textContent = address[0] + ", " + address[2];
